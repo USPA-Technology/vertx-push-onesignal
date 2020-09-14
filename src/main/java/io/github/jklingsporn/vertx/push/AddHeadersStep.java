@@ -14,5 +14,4 @@ public interface AddHeadersStep extends PushToDestinationStep{
      * @see <a href="https://documentation.onesignal.com/reference#section-content-language">Create notification</a>
      */
     PushToDestinationStep withHeadings(JsonObject headings);
-
 }

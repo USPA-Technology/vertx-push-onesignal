@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
     <groupId>io.github.jklingsporn</groupId>
     <artifactId>vertx-push-onesignal</artifactId>
-    <version>2.2</version>
+    <version>2.3</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <properties>
         <vertx.version>3.7.1</vertx.version>
@@ -22,6 +22,11 @@
             <name>Jens Klingpsorn</name>
             <email>jens.klingsporn@gmail.com</email>
             <organizationUrl>https://github.com/jklingsporn</organizationUrl>
+        </developer>
+        <developer>
+            <name>Trieu Nguyen</name>
+            <email>tantrieuf31@gmail.com</email>
+            <organizationUrl>https://github.com/trieu</organizationUrl>
         </developer>
     </developers>
     <licenses>

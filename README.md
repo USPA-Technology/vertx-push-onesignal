@@ -1,12 +1,17 @@
 # vertx-push-onesignal
-Send push notifications asynchronously in your [vertx](http://vertx.io/) application with [OneSignal](https://onesignal.com/).
+
+* Send push notifications asynchronously in your [vertx](http://vertx.io/) application with [OneSignal](https://onesignal.com/).
+
+* Modified Sep 14, 2020 by Trieu Nguyen (Thomas) to set landing page URL in notification message
+
 
 #### Example
 ```
 //Create a client. You get the APP_ID and API_KEY from the OneSignal-dashboard
+String landingPageUrl = "https://github.com/";
 PushClient.create(Vertx.vertx(), "YOUR_APP_ID", "YOUR_API_KEY").
                 //setup the content of the message on the serverside
-                withContent(new JsonObject().put("en", "English Content.").put("de","Deutscher Inhalt.")).
+                withContent(new JsonObject().put("en", "English Content.").put("de","Deutscher Inhalt."), landingPageUrl).
                 //all users should receive this
                 targetBySegments(Segments.ALL).
                 sendNow(

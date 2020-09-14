@@ -38,4 +38,9 @@ public class NoopPushClient implements PushClient{
     public void cancel(String notificationId, Handler<AsyncResult<JsonObject>> resultHandler) {
         resultHandler.handle(Future.succeededFuture(new JsonObject()));
     }
+
+	@Override
+	public AddHeadersStep withContent(JsonObject contents, String url) {
+		return NoopAddHeadersStep.getInstance();
+	}
 }

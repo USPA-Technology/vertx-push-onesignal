@@ -79,6 +79,8 @@ public interface PushClient {
      * @see <a href="https://documentation.onesignal.com/reference#section-content-language">Create notification</a>
      */
     AddHeadersStep withContent(JsonObject contents);
+    
+    AddHeadersStep withContent(JsonObject contents, String url);
 
     /**
      * Send a raw push request and assembling parameters on your own. Warning: no plausibility checks are made.

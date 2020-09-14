@@ -10,10 +10,15 @@ class PushContentsStepImpl implements PushMessageStep {
     private final JsonObject container;
     private final PushClient client;
 
-    public PushContentsStepImpl(JsonObject container, PushClient client, JsonObject contents) {
+    public PushContentsStepImpl(JsonObject container, PushClient client, JsonObject contents, String url) {
         this.container = container;
         this.client = client;
         this.container.put("contents", contents);
+        
+        if(! url.isEmpty()) {
+        	this.container.put("url", url);
+        }
+        
     }
 
     @Override

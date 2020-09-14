@@ -84,7 +84,7 @@ class OneSignalPushClient implements PushClient{
 
     @Override
     public AddHeadersStep withContent(JsonObject contents) {
-        return new AddHeadersStepImpl(new PushContentsStepImpl(new JsonObject().put("app_id", pushClientOptions.getAppId()),this,contents));
+        return new AddHeadersStepImpl(new PushContentsStepImpl(new JsonObject().put("app_id", pushClientOptions.getAppId()),this,contents,""));
     }
 
     @Override
@@ -110,4 +110,10 @@ class OneSignalPushClient implements PushClient{
                 .putHeader(HttpHeaders.AUTHORIZATION.toString(), "Basic " + pushClientOptions.getRestApiKey())
                 .send(handleResult(resultHandler));
     }
+
+	@Override
+	public AddHeadersStep withContent(JsonObject contents, String url) {
+		AddHeadersStep step = new AddHeadersStepImpl(new PushContentsStepImpl(new JsonObject().put("app_id", pushClientOptions.getAppId()),this,contents, url));
+		return step;
+	}
 }
